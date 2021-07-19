@@ -6,43 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toTopOf="parent"
-    android:orientation="horizontal"
-    android:weightSum="8"
-    android:layout_margin="20dp"
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabSelectedTextColor="#4C4C4C"
+        app:tabTextColor="#787878"
+        android:backgroundTint="#FFFFFF"
+        app:tabIndicatorColor="#4C4C4C"
+        android:elevation="5dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="home" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="group" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="setting" />
+    </com.google.android.material.tabs.TabLayout>
+
+
+<FrameLayout
+    android:id="@+id/frameLayout"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tab_layout"
+    app:layout_constraintBottom_toBottomOf="parent"
     >
 
-    <EditText
-        android:layout_weight="2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="텍스트뷰 내용 검색"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
-        />
-
-    <Button
-        android:layout_weight="6"
-        android:backgroundTint="#3F51B5"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="search"
-        android:textSize="12sp"
-        />
-
-
-</LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+</FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
